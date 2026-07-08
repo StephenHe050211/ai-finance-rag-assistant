@@ -1,0 +1,5 @@
+Brokerage rebate settlement requires raw trade records, cost reference data, AE rebate rate tables, and FX rates. The core logic is to start from gross commission income, deduct exchange cost, system cost, and broker commission, then apply the AE rebate rate.
+
+For futures transactions, product and market classification is important. HKFE and Non-HKFE trades may use different cost references and rebate rates. Currency conversion is required when trades are denominated in USD, JPY, or other currencies but the final management report is presented in HKD.
+
+A reliable automation workflow should validate missing reference data, unmatched AE rates, abnormal negative commission after cost, and missing FX rates. Exceptions should be sent for human review instead of being silently included in the final report.
